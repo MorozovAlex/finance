@@ -10,7 +10,7 @@ class PhoneType extends StringType
 {
     public const NAME = 'user_phone_type';
 
-    public function convertToDatabaseValue($value, AbstractPlatform $platform)
+    public function convertToDatabaseValue($value, AbstractPlatform $platform): mixed
     {
         return $value instanceof Phone ? $value->getValue() : $value;
     }
