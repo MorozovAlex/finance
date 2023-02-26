@@ -1,0 +1,13 @@
+user:
+  lastName: Lastname
+  firstName: Firstname
+  secondName: Second name
+  phone: Phone
+  email: Email
+  education:
+    label: Education
+    choice:
+      1: Secondary
+      2: Special
+      3: High
+  isPersonalData: Consent to the processing of personal data

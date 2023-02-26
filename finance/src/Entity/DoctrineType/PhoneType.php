@@ -8,7 +8,7 @@ use Doctrine\DBAL\Types\StringType;
 
 class PhoneType extends StringType
 {
-    public const NAME = 'user_phone_type';
+    public const NAME = 'user_phone';
 
     public function convertToDatabaseValue($value, AbstractPlatform $platform): mixed
     {

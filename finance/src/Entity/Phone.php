@@ -2,15 +2,12 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use IsoCodes\PhoneNumber;
 use Webmozart\Assert\Assert;
 
-#[ORM\Embeddable]
 class Phone
 {
-    #[ORM\Column]
-    private string $value;
+    private int $value;
 
     public const MAX_LENGTH = 15;
 

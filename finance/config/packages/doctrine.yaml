@@ -17,8 +17,8 @@ doctrine:
         #server_version: '15'
 
         types:
-            user_user_email: 'App\Entity\DoctrineType\EmailType'
-            user_user_phone: 'App\Entity\DoctrineType\PhoneType'
+            user_email: 'App\Entity\DoctrineType\EmailType'
+            user_phone: 'App\Entity\DoctrineType\PhoneType'
 
     orm:
         auto_generate_proxy_classes: true

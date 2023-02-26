@@ -2,39 +2,54 @@
 
 namespace App\Entity;
 
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Types\UuidType;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity]
-#[ORM\Table(name: "users",
+#[ORM\Table(name: 'users',
     uniqueConstraints: [
         new ORM\UniqueConstraint(name: 'phone')
     ]
 )]
 class User
 {
+    private const SECONDARY = 1;
+    private const SPECIAL = 2;
+    private const HIGH = 3;
+    public const EDUCATION = [
+        self::SECONDARY,
+        self::SPECIAL,
+        self::HIGH,
+    ];
+
     #[ORM\Id]
     #[ORM\Column(type: UuidType::NAME, unique: true)]
     #[ORM\GeneratedValue(strategy: 'CUSTOM')]
     #[ORM\CustomIdGenerator(class: 'Ramsey\Uuid\Doctrine\UuidGenerator')]
-    private int $id;
+    private string $id;
 
     #[ORM\Embedded(class: Name::class)]
     private Name $name;
 
-    #[ORM\Embedded(class: Phone::class)]
+    #[ORM\Column(type: 'user_phone', length: 15)]
     private Phone $phone;
 
-    #[ORM\Column(nullable: true)]
+    #[ORM\Column(type: 'user_email', length: 100, nullable: true)]
     private ?Email $email;
 
-    #[ORM\Column(nullable: true)]
+    #[Assert\Choice(self::EDUCATION)]
+    #[ORM\Column(type: Types::SMALLINT, nullable: true)]
     private ?int $education;
 
-    #[ORM\Column(nullable: true)]
-    private ?bool $isPersonalData;
+    #[ORM\Column(type: Types::BOOLEAN)]
+    private bool $isPersonalData = false;
 
-    public function getId(): ?int
+    #[ORM\Column(type: Types::SMALLINT, nullable: true)]
+    private ?int $score;
+
+    public function getId(): string
     {
         return $this->id;
     }
@@ -87,14 +102,26 @@ class User
         return $this;
     }
 
-    public function isPersonalData(): ?bool
+    public function isPersonalData(): bool
     {
         return $this->isPersonalData;
     }
 
-    public function setIsPersonalData(?bool $isPersonalData): self
+    public function setIsPersonalData(bool $isPersonalData): self
     {
         $this->isPersonalData = $isPersonalData;
+
+        return $this;
+    }
+
+    public function getScore(): ?int
+    {
+        return $this->score;
+    }
+
+    public function setScore(?int $score): self
+    {
+        $this->score = $score;
 
         return $this;
     }

@@ -6,9 +6,9 @@ use Webmozart\Assert\Assert;
 
 class Email
 {
-    private string $value;
+    private ?string $value;
 
-    public function __construct(string $value)
+    public function __construct(?string $value)
     {
         Assert::notEmpty($value);
 

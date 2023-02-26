@@ -1,0 +1,13 @@
+user:
+  lastName: Фамилия
+  firstName: Имя
+  secondName: Отчество
+  phone: Телефон
+  email: Эл.почта
+  education:
+    label: Образование
+    choice:
+      1: Среднее
+      2: Специальное
+      3: Высшее
+  isPersonalData: Согласие на обработку персональных данных
