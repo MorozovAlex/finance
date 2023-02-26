@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MessDetectorOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCSFixerOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCodeSnifferOptionsConfiguration">
+    <option name="highlightLevel" value="WARNING" />
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/finance/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/finance/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/finance/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/finance/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/runtime" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/form" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/finance/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/finance/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/finance/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/finance/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/finance/vendor/composer" />
+      <path value="$PROJECT_DIR$/finance/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/finance/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/finance/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/finance/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/finance/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/finance/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/finance/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/finance/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/finance/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/finance/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/finance/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/finance/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/finance/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/finance/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/finance/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/finance/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/finance/vendor/giggsey/libphonenumber-for-php" />
+      <path value="$PROJECT_DIR$/finance/vendor/ronanguilloux/isocodes" />
+      <path value="$PROJECT_DIR$/finance/vendor/giggsey/locale" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/finance/vendor/ramsey/uuid-doctrine" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/finance/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/templating" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/asset" />
+      <path value="$PROJECT_DIR$/finance/vendor/knplabs/knp-menu-bundle" />
+      <path value="$PROJECT_DIR$/finance/vendor/knplabs/knp-menu" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/intl" />
+      <path value="$PROJECT_DIR$/finance/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/finance/vendor/knplabs/knp-components" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
+  <component name="PhpStanOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PsalmOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+</project>
