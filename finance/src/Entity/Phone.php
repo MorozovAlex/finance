@@ -43,4 +43,9 @@ class Phone
             throw new \InvalidArgumentException('The phone format is wrong');
         }
     }
+
+    public function __toString()
+    {
+        return $this->getValue();
+    }
 }

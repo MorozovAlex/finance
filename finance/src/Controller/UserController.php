@@ -7,6 +7,7 @@ use App\Repository\UserRepository;
 use App\UseCase\CreateUser\CreateUserDto;
 use App\UseCase\CreateUser\CreteUserForm;
 use App\UseCase\CreateUser\Handler;
+use App\UseCase\UserList\UserListForm;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -67,9 +68,15 @@ class UserController extends AbstractController
         ]);
     }
 
-    #[Route(path: '/show', name: 'show')]
-    public function show(): Response
+    #[Route(path: '/list', name: 'list')]
+    public function show(Request $request): Response
     {
-        return $this->render('show.html.twig', $this->repository->findAll());
+        $form = $this->createForm(UserListForm::class);
+        $form->handleRequest($request);
+
+        return $this->render('index.html.twig', [
+            'pagination' => $this->repository->findAll(),
+            'form' => $form->createView(),
+        ]);
     }
 }

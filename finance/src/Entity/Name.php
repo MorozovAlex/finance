@@ -48,4 +48,9 @@ class Name
     {
         return $this->last . ' ' . $this->first . ' ' . $this->second;
     }
+
+    public function __toString()
+    {
+        return $this->getFull();
+    }
 }
