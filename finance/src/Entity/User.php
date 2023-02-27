@@ -15,9 +15,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 )]
 class User
 {
-    private const SECONDARY = 1;
-    private const SPECIAL = 2;
-    private const HIGH = 3;
+    public const SECONDARY = 1;
+    public const SPECIAL = 2;
+    public const HIGH = 3;
     public const EDUCATION = [
         self::SECONDARY,
         self::SPECIAL,

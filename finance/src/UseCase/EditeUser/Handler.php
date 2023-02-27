@@ -1,6 +1,6 @@
 <?php
 
-namespace App\UseCase\CreateUser;
+namespace App\UseCase\EditeUser;
 
 use App\Entity\Email;
 use App\Entity\Name;
@@ -9,6 +9,7 @@ use App\Entity\User;
 use App\Service\Flusher;
 use App\Service\Persister;
 use App\Service\ScoreManager;
+use App\UseCase\CreateUser\CreateUserDto;
 
 class Handler
 {
