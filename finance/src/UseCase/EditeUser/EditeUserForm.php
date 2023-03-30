@@ -46,7 +46,7 @@ class EditeUserForm extends AbstractType implements DataMapperInterface
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => CreateUserDto::class,
+            'data_class' => EditUserDto::class,
             'empty_data' => null,
         ]);
     }
@@ -58,8 +58,8 @@ class EditeUserForm extends AbstractType implements DataMapperInterface
         }
 
         // invalid data type
-        if (!$viewData instanceof CreateUserDto) {
-            throw new UnexpectedTypeException($viewData, CreateUserDto::class);
+        if (!$viewData instanceof EditUserDto) {
+            throw new UnexpectedTypeException($viewData, EditUserDto::class);
         }
 
         /** @var FormInterface[] $forms */

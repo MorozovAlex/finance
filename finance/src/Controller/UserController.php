@@ -8,6 +8,7 @@ use App\UseCase\CreateUser\CreateUserDto;
 use App\UseCase\CreateUser\CreteUserForm;
 use App\UseCase\CreateUser\Handler;
 use App\UseCase\EditeUser\EditeUserForm;
+use App\UseCase\EditeUser\EditUserDto;
 use App\UseCase\UserList\UserListForm;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -46,17 +47,16 @@ class UserController extends AbstractController
         ]);
     }
 
-    #[Route(path: '/edite', name: 'edite')]
+    #[Route(path: '/{id}/edite', name: 'edite')]
     public function edite(User $user, Request $request, \App\UseCase\EditeUser\Handler $handler): Response
     {
-        $form = $this->createForm(EditeUserForm::class);
+        $form = $this->createForm(EditeUserForm::class, $handler->handle($user));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             try {
                 $command = $form->getData();
                 $handler->handle($command);
-
             } catch (\DomainException $e) {
                 $this->logger->error($e->getMessage(), ['exception' => $e]);
                 $this->addFlash('error', $e->getMessage());
@@ -76,7 +76,7 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         return $this->render('index.html.twig', [
-            'pagination' => $this->repository->findAll(),
+            'pagination' => $this->repository->findAllWithPagination(),
             'form' => $form->createView(),
         ]);
     }

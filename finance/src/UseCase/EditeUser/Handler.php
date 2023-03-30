@@ -19,21 +19,33 @@ class Handler
         private readonly ScoreManager $scoreManager,
     ) {}
 
-    public function handle(CreateUserDto $dto): User
+    public function handle(User $user): EditUserDto
     {
-        $user = new User();
+//        $user = new User();
 
-        $user->setName(new Name($dto->getFirstName(), $dto->getSecondName(), $dto->getLastName()))
-            ->setPhone(new Phone($dto->getPhone()))
-            ->setEmail(null !== $dto->getEmail() ? new Email($dto->getEmail()) : null)
-            ->setEducation($dto->getEducation())
-            ->setIsPersonalData($dto->getIsPersonalData())
-            ->setScore($this->scoreManager->getScore($dto->getPhone(), $dto->getEmail(), $dto->getEducation(), $dto->getIsPersonalData()))
-        ;
+//        $user->setName(new Name($dto->getFirstName(), $dto->getSecondName(), $dto->getLastName()))
+//            ->setPhone(new Phone($dto->getPhone()))
+//            ->setEmail(null !== $dto->getEmail() ? new Email($dto->getEmail()) : null)
+//            ->setEducation($dto->getEducation())
+//            ->setIsPersonalData($dto->getIsPersonalData())
+//            ->setScore($this->scoreManager->getScore($dto->getPhone(), $dto->getEmail(), $dto->getEducation(), $dto->getIsPersonalData()))
+//        ;
 
-        $this->persister->add($user);
-        $this->flusher->flush();
+        $editUserDto =
+            new EditUserDto(
+                $user->getName()->getLast(),
+                $user->getName()->getFirst(),
+                $user->getPhone(),
+                $user->getName()->getSecond(),
+                $user->getEmail(),
+                $user->getEducation(),
+                $user->isPersonalData(),
+                $user->getScore()
+            );
 
-        return $user;
+//        $this->persister->add($user);
+//        $this->flusher->flush();
+
+        return $editUserDto;
     }
 }
