@@ -88,6 +88,7 @@
       <path value="$PROJECT_DIR$/finance/vendor/symfony/intl" />
       <path value="$PROJECT_DIR$/finance/vendor/knplabs/knp-paginator-bundle" />
       <path value="$PROJECT_DIR$/finance/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/finance/vendor/symfony/webpack-encore-bundle" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />

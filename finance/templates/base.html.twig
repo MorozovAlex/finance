@@ -10,34 +10,38 @@
     {% endblock %}
 </head>
 <body class="c-app">
-<div class="c-wrapper c-fixed-components">
-    <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
-        <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none"
-                type="button"
-                data-target="#sidebar"
-                data-class="c-sidebar-lg-show"
-                responsive="true"
-        >
-            <span class="c-header-toggler-icon"></span>
-        </button>
+    <div class="c-wrapper c-fixed-components">
+        <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
+            <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none"
+                    type="button"
+                    data-target="#sidebar"
+                    data-class="c-sidebar-lg-show"
+                    responsive="true"
+            >
+                <span class="c-header-toggler-icon"></span>
+            </button>
 
-    </header>
-    <div class="c-body">
-        <main class="c-main">
-
-            <div class="container-fluid">
-                <div class="fade-in">
-                    {% include '_flashes.html.twig' %}
-                    {% block body %}{% endblock %}
-                </div>
+            <div class="c-subheader px-3">
+                {% block breadcrumbs %}{% endblock %}
             </div>
-        </main>
-        <footer class="c-footer"></footer>
-    </div>
+
+        </header>
+        <div class="c-body">
+            <main class="c-main">
+
+                <div class="container-fluid">
+                    <div class="fade-in">
+                        {% include '_flashes.html.twig' %}
+                        {% block body %}{% endblock %}
+                    </div>
+                </div>
+            </main>
+            <footer class="c-footer"></footer>
+        </div>
 </div>
 
-{% block javascripts %}
-    {{ encore_entry_script_tags('app') }}
-{% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
 </body>
 </html>

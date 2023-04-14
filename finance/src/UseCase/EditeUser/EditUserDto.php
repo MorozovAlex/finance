@@ -2,8 +2,7 @@
 
 namespace App\UseCase\EditeUser;
 
-use App\Entity\Email;
-use App\Entity\Phone;
+use App\Entity\User;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class EditUserDto
@@ -68,5 +67,17 @@ class EditUserDto
     public function getScore(): ?int
     {
         return $this->score;
+    }
+
+    public static function create(User $user): EditUserDto
+    {
+        return new EditUserDto($user->getName()->getLast(),
+            $user->getName()->getFirst(),
+            $user->getPhone(),
+            $user->getName()->getSecond(),
+            $user->getEmail(),
+            $user->getEducation(),
+            $user->isPersonalData(),
+            $user->getScore());
     }
 }

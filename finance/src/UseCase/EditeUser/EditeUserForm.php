@@ -2,16 +2,12 @@
 
 namespace App\UseCase\EditeUser;
 
-use App\Entity\DoctrineType\EmailType;
-use App\Entity\DoctrineType\PhoneType;
 use App\Entity\User;
 use App\Service\Translator;
-use App\UseCase\CreateUser\CreateUserDto;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\DataMapperInterface;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
@@ -75,12 +71,12 @@ class EditeUserForm extends AbstractType implements DataMapperInterface
         $forms['isPersonalData']->setData($viewData->getIsPersonalData());
     }
 
-    public function mapFormsToData(\Traversable $forms, mixed &$viewData)
+    public function mapFormsToData(\Traversable $forms, mixed &$viewData): void
     {
         /** @var FormInterface[] $forms */
         $forms = iterator_to_array($forms);
 
-        $viewData = new CreateUserDto(
+        $viewData = new EditUserDto(
             $forms['lastName']->getData(),
             $forms['firstName']->getData(),
             $forms['phone']->getData(),
@@ -90,5 +86,4 @@ class EditeUserForm extends AbstractType implements DataMapperInterface
             $forms['isPersonalData']->getData(),
         );
     }
-
 }

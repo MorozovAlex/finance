@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Repository\UserRepository;
-use App\UseCase\CreateUser\CreateUserDto;
 use App\UseCase\CreateUser\CreteUserForm;
 use App\UseCase\CreateUser\Handler;
 use App\UseCase\EditeUser\EditeUserForm;
@@ -50,13 +49,13 @@ class UserController extends AbstractController
     #[Route(path: '/{id}/edite', name: 'edite')]
     public function edite(User $user, Request $request, \App\UseCase\EditeUser\Handler $handler): Response
     {
-        $form = $this->createForm(EditeUserForm::class, $handler->handle($user));
+        $form = $this->createForm(EditeUserForm::class, EditUserDto::create($user));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             try {
                 $command = $form->getData();
-                $handler->handle($command);
+                $handler->handle($user, $command);
             } catch (\DomainException $e) {
                 $this->logger->error($e->getMessage(), ['exception' => $e]);
                 $this->addFlash('error', $e->getMessage());
