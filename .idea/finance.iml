@@ -80,6 +80,8 @@
       <excludeFolder url="file://$MODULE_DIR$/finance/vendor/symfony/intl" />
       <excludeFolder url="file://$MODULE_DIR$/finance/vendor/knplabs/knp-paginator-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/finance/vendor/knplabs/knp-components" />
+      <excludeFolder url="file://$MODULE_DIR$/finance/vendor/doctrine/data-fixtures" />
+      <excludeFolder url="file://$MODULE_DIR$/finance/vendor/doctrine/doctrine-fixtures-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/finance/vendor/symfony/webpack-encore-bundle" />
     </content>
     <orderEntry type="inheritedJdk" />

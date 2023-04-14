@@ -6,9 +6,9 @@ use App\Entity\User;
 
 class ScoreManager
 {
-    private const MEGAFON_CODE = 928;
-    private const BEELINE_CODE = 903;
-    private const MTS_CODE = 918;
+    public const MEGAFON_CODE = 928;
+    public const BEELINE_CODE = 903;
+    public const MTS_CODE = 918;
     private const ENEMY_PHONE_COMPANY_RATE = 1;
     private const PHONE_COMPANY_RATE = [
         self::MEGAFON_CODE => 10,
@@ -16,11 +16,14 @@ class ScoreManager
         self::MTS_CODE => 3,
     ];
 
+    public const GMAIL_DOMAIN = 'gmail';
+    public const YANDEX_DOMAIN = 'yandex';
+    public const MAIL_DOMAIN = 'mail';
     private const ENEMY_DOMAIN_RATE = 3;
     private const EMAIL_RATE = [
-        'gmail' => 10,
-        'yandex' => 8,
-        'mail' => 6,
+        self::GMAIL_DOMAIN => 10,
+        self::YANDEX_DOMAIN => 8,
+        self::MAIL_DOMAIN => 6,
     ];
 
     private const EDUCATION_RATE = [
@@ -32,12 +35,12 @@ class ScoreManager
     private const ZERO_RATE = 0;
     private const PERSONAL_DATA_APPROVED = 4;
 
-    public function getScore(int $phone, ?string $email, ?int $education, bool $personalData): int
+    public function getScore(string $phone, ?string $email, ?int $education, bool $personalData): int
     {
         return $this->getPhoneCompanyRate($phone) + $this->getEmailRate($email) + $this->getEducationRate($education) + $this->getPersonalDataRate($personalData);
     }
 
-    private function getPhoneCompanyRate(int $phone): int
+    private function getPhoneCompanyRate(string $phone): int
     {
         $companyCode = substr($phone, 1, 3);
 

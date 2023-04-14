@@ -7,7 +7,7 @@ use Webmozart\Assert\Assert;
 
 class Phone
 {
-    private int $value;
+    private string $value;
 
     public const MAX_LENGTH = 15;
 
