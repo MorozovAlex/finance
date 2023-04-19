@@ -12,6 +12,10 @@ use Doctrine\Persistence\ObjectManager;
 
 class UserFixture extends Fixture
 {
+    private const ENEMY_PHONE_CODE = '999';
+    private const ENEMY_EMAIL_DOMAIN = 'list';
+    private const RU_CODE = '+7';
+
     public function __construct(
         private readonly ScoreManager $scoreManager,
     ) {}
@@ -57,10 +61,10 @@ class UserFixture extends Fixture
             ScoreManager::MEGAFON_CODE,
             ScoreManager::BEELINE_CODE,
             ScoreManager::MTS_CODE,
-            999,
+            self::ENEMY_PHONE_CODE,
         ];
 
-        return new Phone('+7' . array_rand(array_flip($phoneCode)) . rand(1000000, 9999999));
+        return new Phone(self::RU_CODE . array_rand(array_flip($phoneCode)) . rand(1000000, 9999999));
     }
 
     private function createEmail(): Email
@@ -69,7 +73,7 @@ class UserFixture extends Fixture
             ScoreManager::GMAIL_DOMAIN,
             ScoreManager::YANDEX_DOMAIN,
             ScoreManager::MAIL_DOMAIN,
-            'list',
+            self::ENEMY_EMAIL_DOMAIN,
         ];
 
         return new Email(rand(100, 1000) . '@' . array_rand(array_flip($domain)) . '.com');
